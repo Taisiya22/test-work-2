@@ -1,0 +1,9 @@
+.image{
+    text-align: center;
+    margin-top: 80px;  
+    transition: transform 0.5s;
+}
+
+.image:hover {
+    transform: translateY(-50px); 
+}
