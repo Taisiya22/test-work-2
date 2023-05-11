@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 
 import { UserCard } from 'components/Usercard/UserCard';
@@ -16,6 +16,9 @@ export default function Tweets ()  {
   const [userFilter, setUserFilter] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [, setError] = useState(null);
+
+   const location = useLocation();
+  const backLinkLocation = location.state?.from ?? '/';
 
   const limit = 3;
 
@@ -68,7 +71,7 @@ export default function Tweets ()  {
     return (
       <main>
         <p className={css.text}>
-          <Link to="/" className={css.link}>
+          <Link to={backLinkLocation } className={css.link}>
             <AiOutlineArrowLeft />
           </Link>
         </p>
@@ -87,4 +90,4 @@ export default function Tweets ()  {
     );
   };
 
-// export default Tweets;
+

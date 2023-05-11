@@ -9,7 +9,6 @@
     #5736a3 54.28%,
     #4b2a99 78.99%
   );
-  border-radius: 20px;
 }
 
 .logo {
@@ -78,6 +77,10 @@
   border: transparent;
   text-transform: uppercase;
 }
+.followBtn:hover{
+  opacity: 80%;
+}
+  
 
 .followBtnActive {
   padding: 14px 28px 14px 28px;
@@ -92,4 +95,8 @@
   line-height: 22px;
   border: transparent;
   text-transform: uppercase;
+}
+
+.followBtnActive:hover{
+opacity: 80%;
 }

@@ -12,6 +12,9 @@
   border: transparent;
   text-transform: uppercase;
 }
+.loadBtn:hover{
+  opacity: 50%;
+}
 
 .wrapperBtn {
   text-align: center;

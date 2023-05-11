@@ -10,7 +10,9 @@
   font-size: xx-large;
   font-weight: bolder;
 }
-
+.link:hover{
+color: #5cd3a8;
+}
 .text {
   margin: 10px;
 }

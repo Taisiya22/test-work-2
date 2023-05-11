@@ -5,6 +5,8 @@ import logo from 'images/logo.png';
 import answer from 'images/answer.png';
 import css from './UserCard.module.css';
 
+
+
 export const UserCard = ({ user: { user, id, avatar, followers, tweets } }) => {
   const [follower, setFollower] = useState(followers);
   const [isFollowing, setIsFollowing] = useState(
@@ -23,15 +25,17 @@ export const UserCard = ({ user: { user, id, avatar, followers, tweets } }) => {
       setIsFollowing(!isFollowing);
     } catch (error) {
       console.log(error);
-    }
+    
+    } 
   };
 
   return (
     <li key={id} className={css.container}>
       <img src={logo} alt="logo" className={css.logo} />
+      
       <img src={answer} alt="" className={css.answer} />
       <div className={css.avatarWrapper}>
-        <img src={avatar} alt="" />
+        <img src={avatar} alt="avatar" />
       </div>
       <div className={css.stick}></div>
       <div className={css.userWrapper}>
@@ -40,8 +44,8 @@ export const UserCard = ({ user: { user, id, avatar, followers, tweets } }) => {
         <p className={css.title}>
           {follower.toLocaleString('en-US')} FOLLOWERS
         </p>
-        {!isFollowing ? (
-          <button type="button" className={css.followBtn} onClick={following}>
+        {/* {!isFollowing ? (
+        <button type="button" className={css.followBtn} onClick={following}>
             follow
           </button>
         ) : (
@@ -52,7 +56,15 @@ export const UserCard = ({ user: { user, id, avatar, followers, tweets } }) => {
           >
             following
           </button>
-        )}
+        )} */}
+
+        <button
+          onClick={following}
+          className={!isFollowing ? css.followBtn : css.followBtnActive}
+        >
+          {!isFollowing && <>follow</>}
+          {isFollowing && <>following</>}
+        </button>
       </div>
     </li>
   );
