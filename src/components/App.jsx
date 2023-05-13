@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import SharedLayots from './SharedLayots/SharedLayots';
 import { lazy } from 'react';
 
@@ -11,6 +11,7 @@ export const App = () => {
       <Route path="/" element={<SharedLayots />}>
         <Route index element={<Home />} />
         <Route path="/tweets" element={<Tweets />} />
+        <Route path='*' element={<Navigate to = "/"/> } />
       </Route>
     </Routes>
   );
